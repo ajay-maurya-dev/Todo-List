@@ -11,7 +11,7 @@
   overflow: auto scroll;
 }
 
-ul {
+.todo > ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -26,7 +26,7 @@ ul li {
   font-size: 25px;
   margin-bottom: 20px;
 }
-span {
+ul li span {
   /* background: #030303; */
   color: #fff9f9;
   left: 90%;

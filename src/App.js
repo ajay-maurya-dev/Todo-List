@@ -78,7 +78,7 @@ className='bg-green-500 px-3 py-2 sm:px-2 sm:py-2 md:px-4 md:py-5 mx-1 sm:mx-0 m
         <ul>
           {todo.map((value, index) => (
             <Todolist
-            key={index}
+            key={value}
             value={value}
             index={index}
             deleteTodo={deleteTodo}
@@ -102,7 +102,16 @@ function Todolist({ value, index, deleteTodo }) {
       {value}
       <span
         className="cursor-pointer font-bold"
+        role="button"
+        tabIndex={0}
+        aria-label={`Delete ${value}`}
         onClick={() => deleteTodo(index)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            deleteTodo(index);
+          }
+        }}
       >
         &times;
       </span>
